@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Branch</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            background-color: white;
+            color: black;
+            font-size: 32px;
+            padding: 30px;
+            max-height: 30px;
+            overflow: hidden;
+        }
+
+        form {
+            width: 50%;
+            margin: 20px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #27ae60;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<h1>Edit Branch</h1>
+<form th:action="@{/branches/edit/{id}(id=${branch.pk_BranchID})}" th:object="${branch}" method="post">
+    <label>Name: <input type="text" th:field="*{nameBranch}"/></label>
+    <label>Country: <input type="text" th:field="*{countryBranch}"/></label>
+    <button type="submit">Update</button>
+</form>
+<a th:href="@{/branches}">Back to list</a>
+</body>
+</html>

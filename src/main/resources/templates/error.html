@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            background-color: white;
+            color: black;
+            font-size: 32px;
+            padding: 30px;
+            max-height: 30px;
+            overflow: hidden;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            margin-top: 10px;
+            display: inline-block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Error</h1>
+<p th:text="${error}"></p>
+<a th:href="@{/branches}">Back to list</a>
+</body>
+</html>
